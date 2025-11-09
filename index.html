@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luthfiatul Hafizah | Portfolio</title>
+  <style>
+    /* 🌷 BASE STYLE */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      text-align: center;
+      color: #444;
+      background-color: #fff7f9;
+      overflow-x: hidden;
+    }
+
+    h1, h2 {
+      color: #ff9ebe;
+      font-weight: 700;
+    }
+
+    header {
+      margin-top: 60px;
+    }
+
+    /* 🌸 PROFILE PHOTO */
+    header img.profile-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      box-shadow: 0 0 15px rgba(242, 201, 217, 0.8);
+    }
+
+    /* 🌼 SKILLS SECTION */
+    /* 🌼 SKILLS SECTION */
+.skills {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.skill-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+/* 🌸 Setiap skill tampil kayak card kecil terpisah */
+.skill {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px 25px;
+  border-radius: 20px;
+  box-shadow: 0 3px 8px rgba(242, 201, 217, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 130px; /* ukuran card skill */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 15px rgba(255, 158, 190, 0.4);
+}
+
+.skill img {
+  width: 40px;
+  height: 40px;
+}
+
+.skill span {
+  font-weight: 600;
+  color: #ff9ebe;
+  font-size: 15px;
+}
+
+
+    .about, .contact {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  width: 60%; /* dari 80% jadi 60% biar lebih ramping */
+  max-width: 600px; /* biar pas di layar gede */
+  margin: 40px auto;
+  padding: 25px 30px;
+  box-shadow: 0 4px 10px rgba(242, 201, 217, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+
+.about p, .contact p, .contact ul {
+  font-size: 16px;
+  color: #555;
+}
+
+.contact a {
+  color: #ff8bb0;
+  text-decoration: none;
+}
+.contact a:hover {
+  text-decoration: underline;
+}
+
+
+    /* 🌠 BINTANG JATUH ANIMASI */
+    canvas#stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: radial-gradient(ellipse at bottom, #fddde6 0%, #fef6f9 100%);
+    }
+
+    /* ✨ RESPONSIVE */
+    @media (max-width: 600px) {
+      .skill-list {
+        gap: 15px;
+      }
+      .skill {
+        padding: 10px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🌠 Background Bintang -->
+  <canvas id="stars"></canvas>
+
+  <!-- 🌸 Header -->
+  <header>
+    <img src="foto-lulu.jpg" alt="Foto Luthfiatul Hafizah Tarihoran" class="profile-photo">
+    <h1>Luthfiatul Hafizah Tarihoran</h1>
+    <p>Creative Designer | UI/UX Enthusiast | Visual Editor</p>
+  </header>
+
+  <!-- 🌸 About Me -->
+<section class="about">
+  <h2>About Me</h2>
+  <p>
+    Hai! Aku <strong>Luthfiatul Hafizah Tarihoran</strong>, mahasiswi aktif di Bina Sarana Informatika jurusan Teknik Informatika.
+    Aku suka banget hal yang berhubungan dengan <em>UI/UX Design</em>, edit visual, dan bikin tampilan yang menarik tapi tetap simpel.
+    Aku biasa pakai <strong>Canva</strong>, <strong> Figma</strong> untuk mendesain, dan <strong>CapCut</strong> untuk edit video.
+  </p>
+</section>
+
+
+  <!-- 🌼 Skills -->
+  <section class="skills">
+    <h2>My Skills</h2>
+    <div class="skill-list">
+      <div class="skill">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/canva.svg" alt="Canva Logo">
+        <span>Canva</span>
+      </div>
+      <div class="skill">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/figma.svg" alt="Figma Logo">
+        <span>Figma</span>
+      </div>
+      <div class="skill">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Capcut-logo.svg" alt="CapCut Logo">
+        <span>CapCut</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🌸 Contact Me -->
+<section class="contact">
+  <h2>Contact Me</h2>
+  <p>Kamu bisa hubungi aku lewat:</p>
+  <ul style="list-style:none; padding:0;">
+    <li>📧 <a href="mailto:luthfiatulhafizahtariho71@gmail.com">luthfiatulhafizahtariho71@gmail.com</a></li>
+    <li>📱 Instagram: <a href="https://instagram.com/lzaata" target="_blank">@lzaata</li>
+  </ul>
+</section>
+
+
+  <!-- 🌟 JS Animasi Bintang -->
+  <script>
+    const canvas = document.getElementById("stars");
+    const ctx = canvas.getContext("2d");
+    let stars = [];
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resize);
+    resize();
+
+    function createStar() {
+      return {
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 1.5,
+        speed: Math.random() * 0.5 + 0.2,
+      };
+    }
+
+    for (let i = 0; i < 100; i++) stars.push(createStar());
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "white";
+      stars.forEach((star) => {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+        ctx.fill();
+        star.y += star.speed;
+        if (star.y > canvas.height) {
+          star.y = 0;
+          star.x = Math.random() * canvas.width;
+        }
+      });
+      requestAnimationFrame(draw);
+    }
+
+    draw();
+  </script>
+
+</body>
+</html>
+
